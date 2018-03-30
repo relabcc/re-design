@@ -1,8 +1,8 @@
-import React from "react"
-import App from "../components/App"
+import React from 'react';
+import App from '../containers/App';
 
 export default () => (
   <App>
     <p>About Page</p>
   </App>
-)
+);

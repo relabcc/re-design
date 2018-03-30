@@ -1,27 +1,48 @@
 {
-  "name": "test",
-  "version": "2.0.0",
+  "name": "re-design",
+  "version": "0.0.0",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "clean-tag": "^1.0.4",
     "firebase-admin": "^5.11.0",
     "firebase-functions": "^0.9.1",
+    "lodash": "^4.17.5",
     "next": "^5.0.1-canary.17",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "react-icons": "^2.2.7",
+    "sanitize.css": "^5.0.0",
+    "styled-components": "^3.2.3",
+    "styled-system": "^2.2.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.42",
     "@babel/core": "^7.0.0-beta.42",
     "@babel/preset-env": "^7.0.0-beta.42",
     "@firebase/app-types": "^0.1.2",
+    "@storybook/addon-actions": "^3.3.15",
+    "@storybook/addon-links": "^3.3.15",
+    "@storybook/addons": "^3.3.15",
+    "@storybook/react": "^3.3.15",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.2",
     "cpx": "^1.5.0",
+    "css-loader": "^0.28.11",
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb": "16.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0",
+    "file-loader": "^1.1.11",
     "firebase-tools": "^3.17.7",
-    "prettier": "^1.11.1",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "style-loader": "^0.20.3",
+    "url-loader": "^1.0.1"
   },
   "scripts": {
     "fblogin": "yarn firebase login",
+    "start": "yarn dev",
     "dev": "next \"src/app\"",
     "preserve": "yarn build-public && yarn build-funcs && yarn build-app && yarn copy-deps && yarn install-deps",
     "serve": "NODE_ENV=production yarn firebase serve --only functions,hosting",
@@ -33,9 +54,8 @@
     "build-funcs": "babel \"src/functions\" --out-dir \"dist/functions\"",
     "build-app": "NODE_ENV=production next build \"src/app\"",
     "copy-deps": "cpx \"*{package.json,yarn.lock}\" \"dist/functions\"",
-    "install-deps": "cd \"dist/functions\" && yarn"
-  },
-  "prettier": {
-    "trailingComma": "es5"
+    "install-deps": "cd \"dist/functions\" && yarn",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   }
 }

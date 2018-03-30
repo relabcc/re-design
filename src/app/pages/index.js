@@ -1,8 +1,12 @@
-import React from "react"
-import App from "../components/App"
+import React from 'react';
+import App from '../containers/App';
+import Container from '../components/Container';
+import Text from '../components/Text';
 
 export default () => (
   <App>
-    <p>Index Page</p>
+    <Container>
+      <Text f="2em">Index TextPage</Text>
+    </Container>
   </App>
-)
+);

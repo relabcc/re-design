@@ -1,6 +1,6 @@
-import { nextApp as next } from "./app/app"
-import { mars } from "./worlds/mars"
-import { jupiter } from "./worlds/jupiter"
+import { nextApp as next } from './app/app';
+import { mars } from './worlds/mars';
+import { jupiter } from './worlds/jupiter';
 
 /*
 Namespace application services with function groups.
@@ -12,7 +12,7 @@ Partially deploy namespaces for independent service updates.
 const app = {
   next,
   // other Hosting dependencies
-}
+};
 
 // Mircoservices that make up the Greetings service
 // yarn deploy-functions
@@ -20,6 +20,6 @@ const greetings = {
   mars,
   jupiter,
   // other funcs
-}
+};
 
-export { app, greetings }
+export { app, greetings };
