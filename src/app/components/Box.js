@@ -83,6 +83,7 @@ Box.fixed = styled(Box.absolute)`
 `;
 
 Box.fullpage = styled(Box)`
+  position: relative;
   padding-top: ${themeGet('headerHeight')};
   height: 100vh;
 `;
