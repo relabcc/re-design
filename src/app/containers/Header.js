@@ -13,7 +13,7 @@ export default () => (
     <Flex justify="space-between" align="center" height={theme.headerHeight}>
       <Box w={searchWidth} display={['none', 'none', 'block']} />
       <Box px="1em">
-        <Logo.horizontal w="15em" />
+        <Logo.horizontal w="14em" />
       </Box>
       <Box w={searchWidth} pr="1em">
         <Input.search />

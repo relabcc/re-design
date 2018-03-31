@@ -20,6 +20,7 @@ import {
   display,
   maxWidth,
   minHeight,
+  themeGet,
 } from 'styled-system';
 
 import blacklist from './utils/blacklist';
@@ -79,6 +80,11 @@ Box.absolute = styled(Box.relative)`
 
 Box.fixed = styled(Box.absolute)`
   position: fixed;
+`;
+
+Box.fullpage = styled(Box)`
+  padding-top: ${themeGet('headerHeight')};
+  height: 100vh;
 `;
 
 export default Box;

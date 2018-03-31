@@ -13,6 +13,6 @@ const makeLogo = (config) => (props) => (
 );
 
 export default {
-  vertical: makeLogo({ ratio: 348.15 / 314.17, src: vertical }),
-  horizontal: makeLogo({ ratio: 43.73 / 199.56, src: horizontal }),
+  vertical: makeLogo({ ratio: 1, src: vertical }),
+  horizontal: makeLogo({ ratio: 55.5 / 212.06, src: horizontal }),
 };
