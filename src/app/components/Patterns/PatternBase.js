@@ -15,4 +15,8 @@ PatternBase.propTypes = {
   size: PropTypes.string,
 };
 
+PatternBase.defaultProps = {
+  size: '50vw',
+};
+
 export default PatternBase;

@@ -10,6 +10,7 @@ import Box from '../src/app/components/Box';
 import Col from '../src/app/components/Col';
 import Container from '../src/app/components/Container';
 import Logo from '../src/app/components/Logo';
+import Patterns from '../src/app/components/Patterns';
 
 storiesOf('Text', module)
   .add('Text', () => (
@@ -40,3 +41,10 @@ storiesOf('Layout', module)
 storiesOf('Logo', module)
   .add('Vertical', () => <Logo.vertical w={200} />)
   .add('Horizontal', () => <Logo.horizontal w={200} />);
+
+storiesOf('Patterns', module)
+  .add('White', () => <Patterns.white w={1} height="100vh" />)
+  .add('Gray', () => <Patterns.gray w={1} height="100vh" />)
+  .add('Black', () => <Patterns.black w={1} height="100vh" />)
+  .add('Yellow', () => <Patterns.yellow w={1} height="100vh" />);
+
