@@ -24,7 +24,7 @@ const parseOrigin = ({ apex }) => {
   }
 };
 
-const parseApex = ({ apex }) => Array(4).fill('50%')
+export const parseApex = ({ apex }) => Array(4).fill('50%')
   .map((a, index) => index === apex ? '0' : a)
   .join(' ');
 

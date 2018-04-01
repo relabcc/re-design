@@ -5,11 +5,15 @@ import App from '../App';
 
 import SectionIntro from './SectionIntro';
 import SectionAbout from './SectionAbout';
+import SectionActivity from './SectionActivity';
+import SectionPartner from './SectionPartner';
+import SectionContact from './SectionContact';
 import SideSocials from '../../components/SideSocials';
-import SectionLayout from '../../components/SectionLayout';
-import PatternGray from '../../components/Patterns/Gray';
+import Patterns from '../../components/Patterns';
+import SectionLayout from './SectionLayout';
 
 import { setSectionIn, setSectionOut } from '../mainReducer';
+import { makeSelectSocialColor } from '../selectors';
 
 const description = '任白眾我的己，角富兒風驚有等入新生其氣好年；光病當個法的發。是子設小，每靈市：';
 
@@ -26,25 +30,73 @@ const firstSections = [
   },
 ];
 
-const generateSection = (dispatch) => ({ key, Comp, ...rest }) => (
-  <Waypoint
-    key={key}
-    onEnter={() => dispatch(setSectionIn(key))}
-    onLeave={() => dispatch(setSectionOut(key))}
-  >
-    <Comp {...rest} />
-  </Waypoint>
-);
+const restSections = [
+  {
+    key: 'activities',
+    title: 'ACTIVITIES',
+    index: 2,
+    description,
+    color: 'white',
+    Comp: SectionLayout,
+    children: <SectionActivity />,
+    pattern: 'yellow',
+  },
+  {
+    key: 'partners',
+    title: 'PARTNERS',
+    index: 3,
+    description,
+    color: 'yellow',
+    Comp: SectionLayout,
+    children: <SectionPartner />,
+    pattern: 'white',
+  },
+  {
+    key: 'contact',
+    title: 'CONTACT',
+    index: 4,
+    description,
+    color: 'teal',
+    Comp: SectionLayout,
+    children: <SectionContact />,
+    pattern: 'black',
+  },
+];
 
-const HomePage = ({ dispatch }) => (
+const generateSection = (dispatch) => ({
+  key,
+  Comp,
+  pattern,
+  ...rest
+}) => {
+  const content = <Comp {...rest} />;
+  const Pattern = Patterns[pattern];
+  return (
+    <Waypoint
+      key={key}
+      onEnter={() => dispatch(setSectionIn(key))}
+      onLeave={() => dispatch(setSectionOut(key))}
+      bottomOffset="50%"
+      topOffset="49%"
+    >
+      {pattern ? <Pattern>{content}</Pattern> : content}
+    </Waypoint>
+  );
+};
+
+const HomePage = ({ dispatch, browser, socialColor }) => (
   <div>
-    <PatternGray>
+    <Patterns.gray>
       {firstSections.map(generateSection(dispatch))}
-    </PatternGray>
-    <SideSocials />
+    </Patterns.gray>
+    {restSections.map(generateSection(dispatch))}
+    {browser.greaterThan.xs && <SideSocials white={socialColor === 'white'} />}
   </div>
 );
 
-const ConnectedHome = connect()(HomePage);
+const ConnectedHome = connect((state) => ({
+  browser: state.get('browser'),
+  socialColor: makeSelectSocialColor()(state),
+}))(HomePage);
 
 export default () => <App><ConnectedHome /></App>;

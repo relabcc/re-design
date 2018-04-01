@@ -12,8 +12,20 @@ const makeSelectSocialColor = () => createSelector(
   (sate) => sate.get('socialColor')
 );
 
+const makeSelectActiveSection = () => createSelector(
+  selectMain,
+  (sate) => sate.get('activeSection')
+);
+
+const makeSelectPrevSection = () => createSelector(
+  selectMain,
+  (sate) => sate.get('prevSection')
+);
+
 export {
   selectMain,
   makeSelectHeaderIconActive,
   makeSelectSocialColor,
+  makeSelectActiveSection,
+  makeSelectPrevSection,
 };

@@ -11,6 +11,7 @@ const BubbleButton = styled(BubbleShape)`
   padding: 0;
   line-height: 1;
   font-weight: ${themeGet('bold')};
+  transition: all ${themeGet('duration')}ms;
   &:hover,
   &:focus {
     border-color: ${getColorByPropKey('hoverBg')};

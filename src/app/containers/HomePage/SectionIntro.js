@@ -13,7 +13,7 @@ const HomeActionBtn = (props) => <BubbleButton w="6em" mx="0.5em" scale {...prop
 
 export default (props) => (
   <section>
-    <Box.fullpage {...props}>
+    <Box.fullpage mb="2em" {...props}>
       <Parallax transform={{ translateY: -100 }}>
         <Box.absolute left="-7vw" top="-7vw" w="33vw">
           <BubbleShape bg="teal" w={1} />

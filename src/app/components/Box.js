@@ -24,6 +24,7 @@ import {
 } from 'styled-system';
 
 import blacklist from './utils/blacklist';
+import { boxShadow } from './utils/customProps';
 
 const transform = responsiveStyle({
   prop: 'transform',
@@ -54,6 +55,7 @@ const Box = styled(tag)`
   ${display}
   ${maxWidth}
   ${minHeight}
+  ${boxShadow}
   ${({ onClick }) => onClick && 'cursor: pointer;'}
 `;
 
@@ -86,6 +88,10 @@ Box.fullpage = styled(Box)`
   position: relative;
   padding-top: ${themeGet('headerHeight')};
   height: 100vh;
+`;
+
+Box.transition = styled(Box)`
+  transition: all ${themeGet('duration')}ms;
 `;
 
 export default Box;

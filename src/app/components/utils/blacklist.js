@@ -17,4 +17,6 @@ export default [
   'scale',
   'hoverColor',
   'hoverBg',
+  'boxShadowBlur',
+  'trans',
 ];

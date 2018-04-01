@@ -11,6 +11,15 @@ import Col from '../src/app/components/Col';
 import Container from '../src/app/components/Container';
 import Logo from '../src/app/components/Logo';
 import Patterns from '../src/app/components/Patterns';
+import ActivityCarousel from '../src/app/components/ActivityCarousel';
+
+const activity = {
+  image: '//via.placeholder.com/1200x630',
+  title: '活動主題名稱',
+  description: '活動內容敘述活動內容敘述，活動內容敘述，活動內容敘述活動內容敘述，活動內容敘述，活動內容敘述活動內容敘述。',
+  startDate: '2018-10-22',
+  endDate: '2018-10-27',
+};
 
 storiesOf('Text', module)
   .add('Text', () => (
@@ -36,6 +45,11 @@ storiesOf('Layout', module)
         <Col fluid height={200} bg="blue" />
       </Flex>
     </Container>
+  ))
+  .add('ActivityCard', () => (
+    <Box w="40em" p="5em" bg="yellow">
+      <ActivityCarousel items={Array(3).fill(activity)} />
+    </Box>
   ));
 
 storiesOf('Logo', module)

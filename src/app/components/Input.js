@@ -6,6 +6,7 @@ import {
   space,
   fontSize,
   themeGet,
+  borderColor,
 } from 'styled-system';
 import FaSearch from 'react-icons/lib/fa/search';
 
@@ -19,6 +20,7 @@ const Input = styled(tag.input)`
   line-height: 2;
   border-radius: 2em;
   box-sizing: border-box;
+  ${borderColor}
   &:focus {
     outline: none;
   }
@@ -40,5 +42,9 @@ Input.search = ({
     </Box.absolute>
   </Box.relative>
 );
+
+Input.bubble = styled(Input)`
+  border-radius: 0 2em 2em 2em;
+`;
 
 export default Input;

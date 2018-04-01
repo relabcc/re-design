@@ -20,6 +20,7 @@ export const buttonStyle = css`
   padding: 0;
   border: none;
   font-size: 1em;
+  font-family: inherit;
   line-height: 1;
   ${fontSize}
   ${space}

@@ -8,7 +8,6 @@ const keys = [
   'xs',
   'sm',
   'md',
-  'lg',
 ];
 
 /**

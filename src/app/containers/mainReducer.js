@@ -9,6 +9,7 @@ export const SET_SECTION_OUT = 'Re-design/MainReducer/SET_SECTION_OUT';
 
 export const showHeaderIcon = createAction(SHOW_HEADER_ICON);
 export const hideHeaderIcon = createAction(HIDE_HEADER_ICON);
+export const setSocialColor = createAction(SET_SOCIAL_COLOR);
 export const setSectionIn = createAction(SET_SECTION_IN);
 export const setSectionOut = createAction(SET_SECTION_OUT);
 
@@ -29,9 +30,8 @@ export default handleActions({
     return state.set('socialColor', payload);
   },
   [SET_SECTION_IN](state, { payload }) {
-    return state.set(payload, true);
-  },
-  [SET_SECTION_OUT](state, { payload }) {
-    return state.set(payload, false);
+    return state
+      .set('prevSection', state.get('activeSection'))
+      .set('activeSection', payload);
   },
 }, initialState);

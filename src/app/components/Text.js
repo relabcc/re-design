@@ -42,6 +42,7 @@ range(1, 7).forEach((key) => {
     <Text
       is={h}
       f={`${1 + ((6 - key) * 0.125)}em`}
+      fontWeight="bold"
       {...props}
     />
   );

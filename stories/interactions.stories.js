@@ -15,5 +15,6 @@ storiesOf('Input', module)
     <div>
       <Input onChange={action('onChange')} my="1em" />
       <Input.search onChange={action('onChange')} my="1em" />
+      <Input.bubble nChange={action('onChange')} my="1em" />
     </div>
   ));

@@ -4,8 +4,8 @@ import constants from 'styled-system/dist/constants';
 
 const emToPx = (em) => em * 16;
 
-export const breakpoints = [36, 62, 90].map(emToPx);
-export const containerWidth = [34, 60, 88].map(emToPx);
+export const breakpoints = [48, 62, 90].map(emToPx);
+export const containerWidth = [45, 60, 88].map(emToPx);
 
 const generateFade = (r, g, b) => range(10, 100, 10)
   .reduce((fade, opacity) => merge(fade, { [opacity]: `rgba(${[r, g, b, opacity / 100].join()})` }), {});
@@ -34,6 +34,7 @@ export default merge(constants, {
     },
     fade: {
       white: generateFade(255, 255, 255),
+      black: generateFade(0, 0, 0),
     },
     ...colors,
   },
