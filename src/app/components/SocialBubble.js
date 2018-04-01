@@ -5,6 +5,7 @@ import FaTwitter from 'react-icons/lib/fa/twitter';
 import FaPinterest from 'react-icons/lib/fa/pinterest-p';
 import FaFacebook from 'react-icons/lib/fa/facebook';
 
+import AbsCenter from './AbsCenter';
 import BubbleButton from './BubbleButton';
 
 const GetSocialBubble = (Icon) => ({ size, white, ...props }) => (
@@ -19,7 +20,7 @@ const GetSocialBubble = (Icon) => ({ size, white, ...props }) => (
     apex={1}
     {...props}
   >
-    <Icon size="0.5em" />
+    <AbsCenter is={Icon} w="0.5em" />
   </BubbleButton>
 );
 

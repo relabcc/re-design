@@ -15,4 +15,6 @@ export default [
   'textTransform',
   'textIndent',
   'scale',
+  'hoverColor',
+  'hoverBg',
 ];

@@ -14,6 +14,7 @@ import SocialBubble from '../src/app/components/SocialBubble';
 storiesOf('Bubbles', module)
   .add('Shape', () => (
     <div>
+      BubbleShape
       <Flex>
         {range(4).map((i) => (
           <BubbleShape
@@ -43,17 +44,21 @@ storiesOf('Bubbles', module)
     </div>
   ))
   .add('Button', () => (
-    <Flex p="2em">
-      <BubbleButton scale w="6em" mx="1em" onClick={action('onClick')}>
-        Button
-      </BubbleButton>
-      <BubbleButton scale w="6em" mx="1em" onClick={action('onClick')} apex={3}>
-        Button
-      </BubbleButton>
-    </Flex>
+    <div>
+      BubbleButton
+      <Flex p="2em">
+        <BubbleButton scale w="6em" mx="1em" onClick={action('onClick')}>
+          Button
+        </BubbleButton>
+        <BubbleButton scale w="6em" mx="1em" onClick={action('onClick')} apex={3}>
+          Button
+        </BubbleButton>
+      </Flex>
+    </div>
   ))
   .add('Social', () => (
     <div>
+      SocialBubble
       <Flex p="2em">
         <SocialBubble.facebook mx="1em" onClick={action('Facebook')} />
         <SocialBubble.pinterest mx="1em" onClick={action('Pinterest')} />

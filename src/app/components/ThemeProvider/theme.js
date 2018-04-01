@@ -1,10 +1,14 @@
 import merge from 'lodash/merge';
+import range from 'lodash/range';
 import constants from 'styled-system/dist/constants';
 
 const emToPx = (em) => em * 16;
 
 export const breakpoints = [36, 62, 90].map(emToPx);
-export const containerWidth = [34, 60, 75].map(emToPx);
+export const containerWidth = [34, 60, 88].map(emToPx);
+
+const generateFade = (r, g, b) => range(10, 100, 10)
+  .reduce((fade, opacity) => merge(fade, { [opacity]: `rgba(${[r, g, b, opacity / 100].join()})` }), {});
 
 const font = 'Arial, "PingFang TC", "HeiTi TC", "Microsoft JhengHei", sans-serif';
 
@@ -28,6 +32,9 @@ export default merge(constants, {
       error: colors.red,
       disabled: colors.gray,
     },
+    fade: {
+      white: generateFade(255, 255, 255),
+    },
     ...colors,
   },
   breakpoints,
@@ -36,6 +43,7 @@ export default merge(constants, {
   gridSpacing: '1em',
   duration: 250,
   bold: 600,
+  semiBold: 500,
   normal: 400,
   headerHeight: '4em',
 });

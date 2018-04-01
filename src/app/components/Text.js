@@ -31,7 +31,7 @@ const Text = styled(tag.p)`
 
 Text.defaultProps = {
   f: '1em',
-  lineHeight: 1.5,
+  lineHeight: 1.75,
   my: 0,
   blacklist,
 };

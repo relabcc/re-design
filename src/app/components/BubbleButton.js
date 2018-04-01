@@ -9,6 +9,7 @@ const BubbleButton = styled(BubbleShape)`
   ${buttonStyle}
   display: block;
   padding: 0;
+  line-height: 1;
   font-weight: ${themeGet('bold')};
   &:hover,
   &:focus {
@@ -18,7 +19,7 @@ const BubbleButton = styled(BubbleShape)`
 `;
 
 BubbleButton.defaultProps = {
-  border: '0.5em solid',
+  border: '0.375em solid',
   hoverColor: 'white',
   hoverBg: 'teal',
 };

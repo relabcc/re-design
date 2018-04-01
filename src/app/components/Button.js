@@ -15,9 +15,12 @@ import { getColorByPropKey } from './utils/getColor';
 import { fontWeight } from './utils/customProps';
 
 export const buttonStyle = css`
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   padding: 0;
   border: none;
   font-size: 1em;
+  line-height: 1;
   ${fontSize}
   ${space}
   ${color}

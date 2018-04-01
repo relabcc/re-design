@@ -3297,6 +3297,10 @@ console-control-strings@^1.0.0, console-control-strings@~1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/console-control-strings/-/console-control-strings-1.1.0.tgz#3d7cf4464db6446ea644bf4b39507f9851008e8e"
 
+consolidated-events@^1.1.0:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/consolidated-events/-/consolidated-events-1.1.1.tgz#25395465b35e531395418b7bbecb5ecaf198d179"
+
 constants-browserify@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/constants-browserify/-/constants-browserify-1.0.0.tgz#c20b96d8c617748aaf1c16021760cd27fcb8cb75"
@@ -3443,7 +3447,7 @@ create-react-class@^15.6.2:
     loose-envify "^1.3.1"
     object-assign "^4.1.1"
 
-cross-env@^5.1.3:
+cross-env@^5.1.3, cross-env@^5.1.4:
   version "5.1.4"
   resolved "https://registry.yarnpkg.com/cross-env/-/cross-env-5.1.4.tgz#f61c14291f7cc653bb86457002ea80a04699d022"
   dependencies:
@@ -4326,6 +4330,10 @@ event-source-polyfill@0.0.12:
 eventemitter3@1.x.x:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-1.2.0.tgz#1c86991d816ad1e504750e73874224ecf3bec508"
+
+eventemitter3@^2.0.0:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-2.0.3.tgz#b5e1079b59fb5e1ba2771c0a993be060a58c99ba"
 
 events@^1.0.0, events@^1.1.1:
   version "1.1.1"
@@ -5654,7 +5662,7 @@ ignore@^3.3.3, ignore@^3.3.5:
   version "3.3.7"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-3.3.7.tgz#612289bfb3c220e186a58118618d5be8c1bab021"
 
-immutable@^3.8.1:
+immutable@^3.8.1, immutable@^3.8.2:
   version "3.8.2"
   resolved "https://registry.yarnpkg.com/immutable/-/immutable-3.8.2.tgz#c2439951455bb39913daf281376f1530e104adf3"
 
@@ -5776,6 +5784,12 @@ into-stream@^3.1.0:
   dependencies:
     from2 "^2.1.1"
     p-is-promise "^1.1.0"
+
+invariant@^2.0.0, invariant@^2.2.1:
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/invariant/-/invariant-2.2.4.tgz#610f3c92c9359ce1db616e538008d23ff35158e6"
+  dependencies:
+    loose-envify "^1.0.0"
 
 invariant@^2.2.0, invariant@^2.2.2:
   version "2.2.3"
@@ -6408,7 +6422,7 @@ locate-path@^2.0.0:
     p-locate "^2.0.0"
     path-exists "^3.0.0"
 
-lodash-es@^4.2.1:
+lodash-es@^4.17.4, lodash-es@^4.17.5, lodash-es@^4.2.1:
   version "4.17.8"
   resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.8.tgz#6fa8c8c5d337481df0bdf1c0d899d42473121e45"
 
@@ -6542,7 +6556,7 @@ lodash.values@^2.4.1:
   dependencies:
     lodash.keys "~2.4.1"
 
-lodash@4.17.5, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.17.0, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0, lodash@^4.5.1, lodash@^4.6.1, lodash@^4.8.0:
+lodash@4.17.5, lodash@^4.0.0, lodash@^4.13.1, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.17.0, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0, lodash@^4.5.1, lodash@^4.6.1, lodash@^4.8.0:
   version "4.17.5"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.5.tgz#99a92d65c0272debe8c96b6057bc8fbfa3bed511"
 
@@ -6649,6 +6663,10 @@ md5.js@^1.3.4:
 media-typer@0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
+
+mediaquery@0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/mediaquery/-/mediaquery-0.0.3.tgz#387d61c10aa95ff4d6907f6aabdd22d7a898e03e"
 
 mem@^1.1.0:
   version "1.1.0"
@@ -8059,7 +8077,7 @@ prop-types@15.6.0:
     loose-envify "^1.3.1"
     object-assign "^4.1.1"
 
-prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.8, prop-types@^15.5.9, prop-types@^15.6.0:
+prop-types@^15.0.0, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.8, prop-types@^15.5.9, prop-types@^15.6.0:
   version "15.6.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.1.tgz#36644453564255ddda391191fb3a125cbdf654ca"
   dependencies:
@@ -8190,6 +8208,12 @@ radium@^0.19.0:
     inline-style-prefixer "^2.0.5"
     prop-types "^15.5.8"
 
+raf@^3.0.0:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/raf/-/raf-3.4.0.tgz#a28876881b4bc2ca9117d4138163ddb80f781575"
+  dependencies:
+    performance-now "^2.1.0"
+
 randomatic@^1.1.3:
   version "1.1.7"
   resolved "https://registry.yarnpkg.com/randomatic/-/randomatic-1.1.7.tgz#c7abe9cc8b87c0baa876b19fde83fd464797e38c"
@@ -8303,6 +8327,17 @@ react-modal@^3.1.10:
     prop-types "^15.5.10"
     warning "^3.0.0"
 
+react-redux@^5.0.7:
+  version "5.0.7"
+  resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-5.0.7.tgz#0dc1076d9afb4670f993ffaef44b8f8c1155a4c8"
+  dependencies:
+    hoist-non-react-statics "^2.5.0"
+    invariant "^2.0.0"
+    lodash "^4.17.5"
+    lodash-es "^4.17.5"
+    loose-envify "^1.1.0"
+    prop-types "^15.6.0"
+
 react-split-pane@^0.1.74:
   version "0.1.77"
   resolved "https://registry.yarnpkg.com/react-split-pane/-/react-split-pane-0.1.77.tgz#f0c8cd18d076bbac900248dcf6dbcec02d5340db"
@@ -8337,6 +8372,13 @@ react-treebeard@^2.1.0:
     radium "^0.19.0"
     shallowequal "^0.2.2"
     velocity-react "^1.3.1"
+
+react-waypoint@^8.0.1:
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/react-waypoint/-/react-waypoint-8.0.1.tgz#00f7694a9d54da5a50be859da5dde96b1795b892"
+  dependencies:
+    consolidated-events "^1.1.0"
+    prop-types "^15.0.0"
 
 react@>=16.0.0:
   version "16.3.0"
@@ -8487,6 +8529,33 @@ reduce-function-call@^1.0.1:
   dependencies:
     balanced-match "^0.4.2"
 
+reduce-reducers@^0.1.0:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/reduce-reducers/-/reduce-reducers-0.1.2.tgz#fa1b4718bc5292a71ddd1e5d839c9bea9770f14b"
+
+redux-actions@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/redux-actions/-/redux-actions-2.3.0.tgz#4e9967d86594b8c235bab6e08960b5c185f296d3"
+  dependencies:
+    invariant "^2.2.1"
+    lodash "^4.13.1"
+    lodash-es "^4.17.4"
+    reduce-reducers "^0.1.0"
+
+redux-immutable@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/redux-immutable/-/redux-immutable-4.0.0.tgz#3a1a32df66366462b63691f0e1dc35e472bbc9f3"
+
+redux-responsive@^4.3.6:
+  version "4.3.6"
+  resolved "https://registry.yarnpkg.com/redux-responsive/-/redux-responsive-4.3.6.tgz#ab4d4e028854137e7f0f148e46304de074b0ed2b"
+  dependencies:
+    mediaquery "0.0.3"
+
+redux-saga@^0.16.0:
+  version "0.16.0"
+  resolved "https://registry.yarnpkg.com/redux-saga/-/redux-saga-0.16.0.tgz#0a231db0a1489301dd980f6f2f88d8ced418f724"
+
 redux@^3.7.2:
   version "3.7.2"
   resolved "https://registry.yarnpkg.com/redux/-/redux-3.7.2.tgz#06b73123215901d25d065be342eb026bc1c8537b"
@@ -8609,6 +8678,10 @@ relateurl@0.2.x:
   version "0.2.7"
   resolved "https://registry.yarnpkg.com/relateurl/-/relateurl-0.2.7.tgz#54dbf377e51440aca90a4cd274600d3ff2d888a9"
 
+rematrix@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/rematrix/-/rematrix-0.2.2.tgz#c96a050260782db9908904885991256e23beda5d"
+
 remove-trailing-separator@^1.0.1:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/remove-trailing-separator/-/remove-trailing-separator-1.1.0.tgz#c24bce2a283adad5bc3f58e0d48249b92379d8ef"
@@ -8719,6 +8792,10 @@ require-uncached@^1.0.3:
 requires-port@1.x.x:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
+
+reselect@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/reselect/-/reselect-3.0.1.tgz#efdaa98ea7451324d092b2b2163a6a1d7a9a2147"
 
 resolve-from@^1.0.0:
   version "1.0.1"
@@ -9452,6 +9529,14 @@ subarg@^1.0.0:
   resolved "https://registry.yarnpkg.com/subarg/-/subarg-1.0.0.tgz#f62cf17581e996b48fc965699f54c06ae268b8d2"
   dependencies:
     minimist "^1.1.0"
+
+subscribe-ui-event@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/subscribe-ui-event/-/subscribe-ui-event-1.1.1.tgz#e0e4aa77dc488743ee70bffeb81376d533d4806f"
+  dependencies:
+    eventemitter3 "^2.0.0"
+    lodash "^4.0.0"
+    raf "^3.0.0"
 
 superstatic@^5.0.1:
   version "5.0.1"
