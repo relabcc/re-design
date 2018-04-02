@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Box from './Box';
+import Flex from './Flex';
 import SocialBubble from './SocialBubble';
 
 const keys = [
@@ -22,5 +23,16 @@ const SideSocials = ({ white, ...props }) => (
 SideSocials.propTypes = {
   white: PropTypes.bool,
 };
+
+const SocialsHorizontal = (props) => (
+  <Flex justify="center" {...props}>
+    {keys.map((key) => {
+      const Bubble = SocialBubble[key];
+      return <Bubble key={key} mx="0.25em" white size="2em" />;
+    })}
+  </Flex>
+);
+
+SideSocials.horizontal = SocialsHorizontal;
 
 export default SideSocials;

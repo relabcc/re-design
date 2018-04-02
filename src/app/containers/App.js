@@ -7,10 +7,10 @@ import configureStore from '../configureStore';
 
 const store = configureStore();
 
-const App = ({ children, noHide }) => (
+const App = ({ children, noHide, noHeader }) => (
   <Provider store={store}>
     <ThemeProvider>
-      <Header noHide={noHide} />
+      {!noHeader && <Header noHide={noHide} />}
       {children}
     </ThemeProvider>
   </Provider>

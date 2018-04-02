@@ -20,7 +20,7 @@ const filters = [
 
 const BlogPage = ({ dispatch, browser, filterOptions }) => (
   <div>
-    <Patterns.gray height="100vh" headerPadding>
+    <Patterns.gray minHeight="100vh" headerPadding>
       <Container mt="2em">
         <SectionTitle>BLOG</SectionTitle>
         <Filters

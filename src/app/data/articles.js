@@ -12,8 +12,8 @@ const smaple = {
   cover: '//via.placeholder.com/800x600',
 };
 
-export default Array(3).fill(smaple).map((project, index) => ({
-  ...project,
+export default Array(3).fill(smaple).map((article, index) => ({
+  ...article,
   tags,
   date: addDays(new Date(), index),
   slug: `article${index + 1}`,

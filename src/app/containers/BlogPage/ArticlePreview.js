@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import format from 'date-fns/format';
 
 import Link from '../../components/Link';
 import Flex from '../../components/Flex';
@@ -10,6 +9,7 @@ import BackgroundImage from '../../components/BackgroundImage';
 import Text from '../../components/Text';
 import BubbleTag from '../../components/BubbleTag';
 import Button from '../../components/Button';
+import DateString from '../../components/DateString';
 
 import { numberOrString } from '../../components/utils/propTypes';
 
@@ -29,7 +29,7 @@ const ArticlePreview = ({
         <BackgroundImage src={cover} ratio={3 / 4} />
       </Box>
       <Box w={1 / 2} px="1em">
-        <Text f="1.25em" color="teal">{format(date, 'MMM.DD, YYYY')}</Text>
+        <DateString>{date}</DateString>
         <Text.h3>{title}</Text.h3>
         <Box mt="0.5em" mb="4em">
           {tags.map((tag) => (

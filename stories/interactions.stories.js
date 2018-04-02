@@ -7,6 +7,7 @@ import { action } from '@storybook/addon-actions';
 import Button from '../src/app/components/Button';
 import Input from '../src/app/components/Input';
 import BubbleTag from '../src/app/components/BubbleTag';
+import HeartButton from '../src/app/components/HeartButton';
 
 storiesOf('Interactions', module)
   .add('Button', () => (
@@ -28,5 +29,10 @@ storiesOf('Interactions', module)
   .add('BubbleTag', () => (
     <div>
       <BubbleTag onClick={action('onClick')}>分類一</BubbleTag>
+    </div>
+  ))
+  .add('HeartButton', () => (
+    <div>
+      <HeartButton onClick={action('onClick')} />
     </div>
   ));
