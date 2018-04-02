@@ -7,6 +7,7 @@ import FreeBackground from './FreeBackground';
 import BubbleShape from './BubbleShape';
 import Text from './Text';
 import Box from './Box';
+import Link from './Link';
 
 const BubbleHover = styled(BubbleShape)`
   opacity: 0;
@@ -34,22 +35,32 @@ const ProjectBubble = ({
   title,
   preview,
   short,
+  slug,
   ...props
-}) => (
-  <Box {...props}>
-    <BubbleShape apex={right ? 3 : 2} is={FreeBackground} src={preview} p="2em">
-      <BubbleHover bg="fade.yellow.70" p="4em" w="100%" height="100%">
-        <Box w={1} color="white" pt="10%" pl="10%">
-          <UnderlineTitle>{title}</UnderlineTitle>
-          <Text fontWeight="bold">{short}</Text>
-        </Box>
-      </BubbleHover>
-    </BubbleShape>
-  </Box>
-);
+}) => {
+  const apex = right ? 3 : 2;
+  return (
+    <Box {...props}>
+      <BubbleShape apex={apex} is={FreeBackground} src={preview} p="2em">
+        <BubbleHover apex={apex} bg="fade.yellow.70" p="4em" w="100%" height="100%">
+          <Link href={`/projects/${slug}`}>
+            <Box w={1} color="white" pt="10%" pl="10%">
+              <UnderlineTitle>{title}</UnderlineTitle>
+              <Text fontWeight="bold">{short}</Text>
+            </Box>
+          </Link>
+        </BubbleHover>
+      </BubbleShape>
+    </Box>
+  );
+};
 
 ProjectBubble.propTypes = {
-
-}
+  right: PropTypes.bool,
+  title: PropTypes.string,
+  preview: PropTypes.string,
+  short: PropTypes.string,
+  slug: PropTypes.string,
+};
 
 export default ProjectBubble;

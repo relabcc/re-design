@@ -22,6 +22,7 @@ injectGlobal`
   }
 
   a {
+    text-decoration: unset;
     &:link,
     &:visited {
       color: inherit;
