@@ -5,7 +5,7 @@ import {
   showHeaderIcon,
   hideHeaderIcon,
   setSocialColor,
-} from './mainReducer';
+} from './reducer';
 import { makeSelectPrevSection } from './selectors';
 
 // const seq = [

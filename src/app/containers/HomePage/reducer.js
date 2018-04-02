@@ -1,11 +1,11 @@
 import { fromJS } from 'immutable';
 import { createAction, handleActions } from 'redux-actions';
 
-export const SHOW_HEADER_ICON = 'Re-design/MainReducer/SHOW_HEADER_ICON';
-export const HIDE_HEADER_ICON = 'Re-design/MainReducer/HIDE_HEADER_ICON';
-export const SET_SOCIAL_COLOR = 'Re-design/MainReducer/SET_SOCIAL_COLOR';
-export const SET_SECTION_IN = 'Re-design/MainReducer/SET_SECTION_IN';
-export const SET_SECTION_OUT = 'Re-design/MainReducer/SET_SECTION_OUT';
+export const SHOW_HEADER_ICON = 'Re-design/HomeReducer/SHOW_HEADER_ICON';
+export const HIDE_HEADER_ICON = 'Re-design/HomeReducer/HIDE_HEADER_ICON';
+export const SET_SOCIAL_COLOR = 'Re-design/HomeReducer/SET_SOCIAL_COLOR';
+export const SET_SECTION_IN = 'Re-design/HomeReducer/SET_SECTION_IN';
+export const SET_SECTION_OUT = 'Re-design/HomeReducer/SET_SECTION_OUT';
 
 export const showHeaderIcon = createAction(SHOW_HEADER_ICON);
 export const hideHeaderIcon = createAction(HIDE_HEADER_ICON);
@@ -16,7 +16,7 @@ export const setSectionOut = createAction(SET_SECTION_OUT);
 const initialState = fromJS({
   headerIconActive: false,
   socialColor: 'dark',
-  activeSection: 'intro',
+  activeSection: null,
 });
 
 export default handleActions({

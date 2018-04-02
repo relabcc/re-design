@@ -57,6 +57,9 @@ const Box = styled(tag)`
   ${minHeight}
   ${boxShadow}
   ${({ onClick }) => onClick && 'cursor: pointer;'}
+  ${(props) => props.headerPadding && `
+    padding-top: ${themeGet('headerHeight')(props)};
+  `}
 `;
 
 Box.defaultProps = {

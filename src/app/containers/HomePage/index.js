@@ -12,8 +12,8 @@ import SideSocials from '../../components/SideSocials';
 import Patterns from '../../components/Patterns';
 import SectionLayout from './SectionLayout';
 
-import { setSectionIn, setSectionOut } from '../mainReducer';
-import { makeSelectSocialColor } from '../selectors';
+import { setSectionIn, setSectionOut } from './reducer';
+import { makeSelectSocialColor } from './selectors';
 
 const description = '任白眾我的己，角富兒風驚有等入新生其氣好年；光病當個法的發。是子設小，每靈市：';
 
@@ -94,9 +94,9 @@ const HomePage = ({ dispatch, browser, socialColor }) => (
   </div>
 );
 
-const ConnectedHome = connect((state) => ({
+const Connected = connect((state) => ({
   browser: state.get('browser'),
   socialColor: makeSelectSocialColor()(state),
 }))(HomePage);
 
-export default () => <App><ConnectedHome /></App>;
+export default () => <App><Connected /></App>;

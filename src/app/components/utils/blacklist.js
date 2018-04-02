@@ -19,4 +19,6 @@ export default [
   'hoverBg',
   'boxShadowBlur',
   'trans',
+  'apex',
+  'headerPadding',
 ];

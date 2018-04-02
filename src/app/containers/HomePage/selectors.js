@@ -1,6 +1,6 @@
 import { createSelector } from 'reselect';
 
-const selectMain = (state) => state.get('main');
+const selectMain = (state) => state.get('home');
 
 const makeSelectHeaderIconActive = () => createSelector(
   selectMain,

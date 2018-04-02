@@ -8,7 +8,7 @@ import { responsiveStoreEnhancer } from 'redux-responsive';
 import createSagaMiddleware from 'redux-saga';
 
 import reducers from './reducers';
-import rootSaga from './containers/sagas';
+import homeSaga from './containers/HomePage/saga';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -19,6 +19,10 @@ const middlewares = [
 const enhancers = [
   applyMiddleware(...middlewares),
   responsiveStoreEnhancer,
+];
+
+const sagas = [
+  homeSaga,
 ];
 
 // If Redux DevTools Extension is installed use it, otherwise use Redux compose
@@ -42,7 +46,7 @@ export default function configureStore(initialState = {}) {
     composeEnhancers(...enhancers)
   );
 
-  store.sagaTask = sagaMiddleware.run(rootSaga);
+  store.sagaTasks = sagas.map(sagaMiddleware.run);
   return store;
 }
 

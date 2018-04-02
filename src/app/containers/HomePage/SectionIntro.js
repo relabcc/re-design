@@ -8,6 +8,7 @@ import Logo from '../../components/Logo';
 import BubbleButton from '../../components/BubbleButton';
 import BubbleShape from '../../components/BubbleShape';
 import Parallax from '../../components/Parallax';
+import Link from '../../components/Link';
 
 const HomeActionBtn = (props) => <BubbleButton w="6em" mx="0.5em" scale {...props} />;
 
@@ -29,8 +30,12 @@ export default (props) => (
       <AbsCenter><Logo.vertical w="15em" /></AbsCenter>
       <Box.absolute left="0" right="0" bottom="8vh">
         <Flex justify="center">
-          <HomeActionBtn>Blog</HomeActionBtn>
-          <HomeActionBtn apex={3}>Portfolio</HomeActionBtn>
+          <Link href="/blog">
+            <HomeActionBtn>Blog</HomeActionBtn>
+          </Link>
+          <Link href="/portfolio">
+            <HomeActionBtn apex={3}>Portfolio</HomeActionBtn>
+          </Link>
         </Flex>
       </Box.absolute>
     </Box.fullpage>

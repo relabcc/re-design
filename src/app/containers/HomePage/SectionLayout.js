@@ -5,6 +5,7 @@ import Box from '../../components/Box';
 import Flex from '../../components/Flex';
 import Text from '../../components/Text';
 import Container from '../../components/Container';
+import SectionTitle from '../../components/SectionTitle';
 
 const SectionLayout = ({
   children,
@@ -20,7 +21,7 @@ const SectionLayout = ({
         <Flex flexWrap={['wrap', 'noWrap']}>
           <Box w={[1, 1 / 3]} align="center" pb={['2em', 0]}>
             <Text.h4 f="2.75em" pb={[0, '7rem']} color={color} letterSpacing="0.1em">{String(index).padStart(2, 0)}</Text.h4>
-            <Text.h2 f="3em" py="2rem" color={color} letterSpacing="0.1em">{title}</Text.h2>
+            <SectionTitle color={color}>{title}</SectionTitle>
             <Box w="20rem" mx="auto">
               <Text align="left">{description}</Text>
             </Box>
