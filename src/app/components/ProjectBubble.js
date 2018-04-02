@@ -41,10 +41,10 @@ const ProjectBubble = ({
   const apex = right ? 3 : 2;
   return (
     <Box {...props}>
-      <BubbleShape apex={apex} is={FreeBackground} src={preview} p="2em">
+      <BubbleShape apex={apex} is={FreeBackground} src={preview} p="2em" boxShadow={2}>
         <BubbleHover apex={apex} bg="fade.yellow.70" p="4em" w="100%" height="100%">
           <Link href={`/projects/${slug}`}>
-            <Box w={1} color="white" pt="10%" pl="10%">
+            <Box w={1} color="white" pt="10%" pl={!right && '10%'} pr={right && '10%'}>
               <UnderlineTitle>{title}</UnderlineTitle>
               <Text fontWeight="bold">{short}</Text>
             </Box>

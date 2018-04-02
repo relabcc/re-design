@@ -19,6 +19,13 @@ app.prepare()
       app.render(req, res, actualPage, queryParams);
     });
 
+    server.get('/article/:id', (req, res) => {
+      const actualPage = '/article';
+      const queryParams = { id: req.params.id };
+      app.render(req, res, actualPage, queryParams);
+    });
+
+
     server.get('*', (req, res) => handle(req, res));
 
     if (dev) {

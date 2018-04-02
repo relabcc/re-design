@@ -10,6 +10,7 @@ import {
   border,
   borderColor,
   borderRadius,
+  letterSpacing,
 } from 'styled-system';
 import tag from 'clean-tag';
 
@@ -38,6 +39,7 @@ export const buttonStyle = css`
   ${borderColor}
   ${borderRadius}
   ${fontWeight}
+  ${letterSpacing}
   appearance: none;
   -webkit-appearance: none;
   transition: all ${themeGet('duration')}ms;
@@ -63,7 +65,8 @@ Button.defaultProps = {
   color: 'white',
   hoverColor: 'teal',
   hoverBg: 'white',
-  px: '1em',
+  pl: '1em',
+  pr: '1em',
   py: '0.5em',
   borderRadius: '1.5em',
   fontWeight: 'bold',
@@ -81,6 +84,15 @@ Button.filter = (props) => (
     hoverBorder="teal"
     f="0.9em"
     px="2em"
+    {...props}
+  />
+);
+
+Button.yellow = (props) => (
+  <Button
+    borderColor="yellow"
+    bg="yellow"
+    hoverColor="yellow"
     {...props}
   />
 );

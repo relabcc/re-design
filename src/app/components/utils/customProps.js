@@ -10,5 +10,5 @@ export const boxShadow = (props) => {
   const bsb = props.boxShadowBlur;
   if (!bs) return '';
 
-  return `box-shadow: 0 0 ${bsb || '1em'} ${themeGet(`colors.fade.black.${bs * 10}`, 'black')(props)}`;
+  return `box-shadow: 0 0 ${bsb || '1.5em'} ${themeGet(`colors.fade.black.${bs * 10}`, 'black')(props)}`;
 };

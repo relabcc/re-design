@@ -7,6 +7,8 @@ import SideSocials from '../../components/SideSocials';
 import Patterns from '../../components/Patterns';
 import SectionTitle from '../../components/SectionTitle';
 import Filters from '../Filters';
+import ArticlePreview from './ArticlePreview';
+import articles from '../../data/articles';
 
 import { toggleFilter, toggleAll } from './reducer';
 import { makeSelectFilter } from './selectors';
@@ -19,13 +21,16 @@ const filters = [
 const BlogPage = ({ dispatch, browser, filterOptions }) => (
   <div>
     <Patterns.gray height="100vh" headerPadding>
-      <Container>
+      <Container mt="2em">
         <SectionTitle>BLOG</SectionTitle>
         <Filters
           filters={filters.map((filter) => ({ ...filter, active: filterOptions.get(filter.key) }))}
           onToggle={(key) => () => dispatch(toggleFilter(key))}
           unsetAll={() => dispatch(toggleAll())}
         />
+        {articles.map((article, index) => (
+          <ArticlePreview key={article.slug} isFirst={index === 0} {...article} />
+        ))}
       </Container>
     </Patterns.gray>
     {browser.greaterThan.xs && <SideSocials />}

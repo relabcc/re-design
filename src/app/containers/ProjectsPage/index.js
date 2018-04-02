@@ -38,7 +38,7 @@ const ProjectsPage = ({ dispatch, browser, filterOptions }) => {
   return (
     <div>
       <Patterns.gray minHeight="100vh" headerPadding>
-        <Container>
+        <Container mt="2em">
           <SectionTitle>PROJECTS</SectionTitle>
           <Filters
             filters={filters.map((filter) => ({ ...filter, active: filterOptions.get(filter.key) }))}
@@ -49,7 +49,7 @@ const ProjectsPage = ({ dispatch, browser, filterOptions }) => {
             <Box w={1 / 2}>
               {chunks.map(render())}
             </Box>
-            <Box w={1 / 2} pt="20%">
+            <Box w={1 / 2} pt="10vh">
               {chunks.map(render(true))}
             </Box>
           </Flex>

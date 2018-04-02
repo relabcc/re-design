@@ -1,10 +1,10 @@
 import React from 'react';
 import App from '../App';
 
-const ProjectsPage = ({ url: { query: { id } } }) => (
+const ArticlePage = ({ url: { query: { id } } }) => (
   <div>
     {id}
   </div>
 );
 
-export default (props) => <App noHide><ProjectsPage {...props} /></App>;
+export default (props) => <App noHide><ArticlePage {...props} /></App>;

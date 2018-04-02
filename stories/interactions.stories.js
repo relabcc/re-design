@@ -6,6 +6,7 @@ import { action } from '@storybook/addon-actions';
 
 import Button from '../src/app/components/Button';
 import Input from '../src/app/components/Input';
+import BubbleTag from '../src/app/components/BubbleTag';
 
 storiesOf('Interactions', module)
   .add('Button', () => (
@@ -22,5 +23,10 @@ storiesOf('Interactions', module)
       <Input onChange={action('onChange')} my="1em" />
       <Input.search onChange={action('onChange')} my="1em" />
       <Input.bubble nChange={action('onChange')} my="1em" />
+    </div>
+  ))
+  .add('BubbleTag', () => (
+    <div>
+      <BubbleTag onClick={action('onClick')}>分類一</BubbleTag>
     </div>
   ));

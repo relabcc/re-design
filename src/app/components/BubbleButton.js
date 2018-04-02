@@ -3,7 +3,6 @@ import { themeGet } from 'styled-system';
 
 import BubbleShape from './BubbleShape';
 import { buttonStyle } from './Button';
-import { getColorByPropKey } from './utils/getColor';
 
 const BubbleButton = styled(BubbleShape)`
   ${buttonStyle}
@@ -14,7 +13,6 @@ const BubbleButton = styled(BubbleShape)`
   transition: all ${themeGet('duration')}ms;
   &:hover,
   &:focus {
-    border-color: ${getColorByPropKey('hoverBg')};
     ${({ scale, disabled }) => scale && !disabled && 'transform: scale(1.38);'}
   }
 `;
@@ -23,6 +21,7 @@ BubbleButton.defaultProps = {
   border: '0.375em solid',
   hoverColor: 'white',
   hoverBg: 'teal',
+  hoverBorder: 'teal',
 };
 
 export default BubbleButton;
