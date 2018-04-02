@@ -10,6 +10,7 @@ import Flex from '../src/app/components/Flex';
 import BubbleShape from '../src/app/components/BubbleShape';
 import BubbleButton from '../src/app/components/BubbleButton';
 import SocialBubble from '../src/app/components/SocialBubble';
+import ProjectBubble from '../src/app/components/ProjectBubble';
 
 storiesOf('Bubbles', module)
   .add('Shape', () => (
@@ -69,5 +70,17 @@ storiesOf('Bubbles', module)
         <SocialBubble.pinterest white mx="1em" onClick={action('Pinterest')} />
         <SocialBubble.twitter white mx="1em" onClick={action('Twitter')} />
       </Flex>
+    </div>
+  ))
+  .add('ProjectBubble', () => (
+    <div>
+      ProjectBubble
+      <ProjectBubble
+        w="25em"
+        title="作品名稱"
+        short="敘述內容敘述內容敘述內容敘述內容敘述內容敘述內容"
+        slug="project1"
+        preview="//via.placeholder.com/640x640"
+      />
     </div>
   ));

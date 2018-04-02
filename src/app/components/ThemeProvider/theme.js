@@ -35,6 +35,7 @@ export default merge(constants, {
     fade: {
       white: generateFade(255, 255, 255),
       black: generateFade(0, 0, 0),
+      yellow: generateFade(255, 205, 0),
     },
     ...colors,
   },

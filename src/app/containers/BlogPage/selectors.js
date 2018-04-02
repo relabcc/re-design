@@ -1,13 +1,13 @@
 import { createSelector } from 'reselect';
 
-const selectPortfolio = (state) => state.get('portfolio');
+const selectBlog = (state) => state.get('blog');
 
 const makeSelectFilter = () => createSelector(
-  selectPortfolio,
+  selectBlog,
   (sate) => sate.get('filter')
 );
 
 export {
-  selectPortfolio,
+  selectBlog,
   makeSelectFilter,
 };

@@ -1,3 +1,5 @@
+import React from 'react';
+
 import styled, { css } from 'styled-components';
 import {
   themeGet,
@@ -13,6 +15,12 @@ import tag from 'clean-tag';
 
 import { getColorByPropKey } from './utils/getColor';
 import { fontWeight } from './utils/customProps';
+
+const active = css`
+  color: ${getColorByPropKey('hoverColor')};
+  background-color: ${getColorByPropKey('hoverBg')};
+  border-color: ${getColorByPropKey('hoverBorder')};
+`;
 
 export const buttonStyle = css`
   -webkit-font-smoothing: antialiased;
@@ -39,9 +47,9 @@ export const buttonStyle = css`
   }
   &:hover,
   &:focus {
-    color: ${getColorByPropKey('hoverColor')};
-    background-color: ${getColorByPropKey('hoverBg')};
+    ${active}
   }
+  ${(props) => props.active && active}
 `;
 
 const Button = styled(tag.button)`
@@ -60,5 +68,21 @@ Button.defaultProps = {
   borderRadius: '1.5em',
   fontWeight: 'bold',
 };
+
+Button.filter = (props) => (
+  <Button
+    borderRadius="0"
+    border="2px solid"
+    borderColor="text"
+    bg="transparent"
+    color="text"
+    hoverBg="teal"
+    hoverColor="white"
+    hoverBorder="teal"
+    f="0.9em"
+    px="2em"
+    {...props}
+  />
+);
 
 export default Button;

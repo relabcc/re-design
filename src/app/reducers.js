@@ -3,7 +3,8 @@ import { createResponsiveStateReducer } from 'redux-responsive';
 
 import { breakpoints } from './components/ThemeProvider/theme';
 import homeReducer from './containers/HomePage/reducer';
-import portfolioReducer from './containers/PortfolioPage/reducer';
+import projectsReducer from './containers/ProjectsPage/reducer';
+import blogReducer from './containers/BlogPage/reducer';
 
 const keys = [
   'xs',
@@ -16,7 +17,8 @@ const keys = [
  */
 export default combineReducers({
   home: homeReducer,
-  portfolio: portfolioReducer,
+  projects: projectsReducer,
+  blog: blogReducer,
   browser: createResponsiveStateReducer(keys.reduce((obj, key, index) => Object.assign(obj, {
     [key]: breakpoints[index],
   }), {})),

@@ -33,8 +33,8 @@ export default (props) => (
           <Link href="/blog">
             <HomeActionBtn>Blog</HomeActionBtn>
           </Link>
-          <Link href="/portfolio">
-            <HomeActionBtn apex={3}>Portfolio</HomeActionBtn>
+          <Link href="/projects">
+            <HomeActionBtn apex={3}>Projects</HomeActionBtn>
           </Link>
         </Flex>
       </Box.absolute>

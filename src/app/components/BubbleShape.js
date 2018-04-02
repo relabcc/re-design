@@ -8,7 +8,6 @@ import {
 } from 'styled-system';
 
 import Box from './Box';
-import AbsCenter from './AbsCenter';
 
 const parseOrigin = ({ apex }) => {
   switch (apex) {
@@ -32,19 +31,36 @@ const Wrapper = styled(Box)`
   border-radius: ${parseApex};
   transform-origin: ${parseOrigin};
   box-sizing: border-box;
+  overflow: hidden;
   ${border}
   ${borderWidth}
   ${borderColor}
 `;
 
+const ForceAbsCenter = styled(Box.absolute)`
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  & > * {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+`;
+
+const formatChildren = (children) => {
+  if (typeof children === 'string' || React.Children.count(children) > 1) return <div>{children}</div>;
+  return children;
+};
+
 const BubbleShape = ({ children, ...props }) => (
   <Wrapper {...props}>
     <Box.relative pb="100%">
-      <Box.absolute top="0" left="0" right="0" bottom="0">
-        <AbsCenter>
-          {children}
-        </AbsCenter>
-      </Box.absolute>
+      <ForceAbsCenter>
+        {formatChildren(children)}
+      </ForceAbsCenter>
     </Box.relative>
   </Wrapper>
 );

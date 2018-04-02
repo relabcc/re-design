@@ -39,6 +39,10 @@ Header.propTypes = {
   noHide: PropTypes.bool,
 };
 
+Header.defaultProps = {
+  noHide: false,
+};
+
 const mapStateToProps = createStructuredSelector({
   headerIconVisible: makeSelectHeaderIconActive(),
 });

@@ -7,9 +7,15 @@ import { action } from '@storybook/addon-actions';
 import Button from '../src/app/components/Button';
 import Input from '../src/app/components/Input';
 
-storiesOf('Input', module)
+storiesOf('Interactions', module)
   .add('Button', () => (
     <Button onClick={action('onClick')}>Button</Button>
+  ))
+  .add('FilterButton', () => (
+    <div>
+      <Button.filter onClick={action('onClick')}>Filter</Button.filter>
+      <Button.filter active onClick={action('onClick')}>Active</Button.filter>
+    </div>
   ))
   .add('Input', () => (
     <div>

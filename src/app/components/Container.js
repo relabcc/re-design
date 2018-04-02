@@ -4,7 +4,7 @@ import { responsiveStyle } from 'styled-system';
 import styled from 'styled-components';
 
 import Box from './Box';
-import theme, { containerWidth } from './ThemeProvider/theme';
+import { containerWidth } from './ThemeProvider/theme';
 
 const injectMaxWidth = responsiveStyle({
   prop: 'maxWidth',
@@ -16,7 +16,7 @@ const Container = styled(({ fluid, ...props }) => (
   <Box
     mx="auto"
     maxWidth={!fluid && containerWidth}
-    px={!fluid && theme.gridSpacing}
+    px={!fluid && ['1em', '5em']}
     {...props}
   />
 ))`

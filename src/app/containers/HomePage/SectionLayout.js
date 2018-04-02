@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import padStart from 'lodash/padStart';
 
 import Box from '../../components/Box';
 import Flex from '../../components/Flex';
@@ -20,7 +21,7 @@ const SectionLayout = ({
       <Container>
         <Flex flexWrap={['wrap', 'noWrap']}>
           <Box w={[1, 1 / 3]} align="center" pb={['2em', 0]}>
-            <Text.h4 f="2.75em" pb={[0, '7rem']} color={color} letterSpacing="0.1em">{String(index).padStart(2, 0)}</Text.h4>
+            <Text.h4 f="2.75em" pb={[0, '7rem']} color={color} letterSpacing="0.1em">{padStart(index, 2, 0)}</Text.h4>
             <SectionTitle color={color}>{title}</SectionTitle>
             <Box w="20rem" mx="auto">
               <Text align="left">{description}</Text>
