@@ -11,6 +11,7 @@ import BubbleShape from '../src/app/components/BubbleShape';
 import BubbleButton from '../src/app/components/BubbleButton';
 import SocialBubble from '../src/app/components/SocialBubble';
 import ProjectBubble from '../src/app/components/ProjectBubble';
+import ListBubbleShape from '../src/app/components/ListBubbleShape';
 
 storiesOf('Bubbles', module)
   .add('Shape', () => (
@@ -80,7 +81,19 @@ storiesOf('Bubbles', module)
         title="作品名稱"
         short="敘述內容敘述內容敘述內容敘述內容敘述內容敘述內容"
         slug="project1"
-        preview="//via.placeholder.com/640x640"
+        preview="//loremflickr.com/640/640"
       />
+    </div>
+  ))
+  .add('ListBubbleShape', () => (
+    <div>
+      ListBubbleShape
+      <ListBubbleShape
+        w="25em"
+        index={2}
+        src="//loremflickr.com/320/320"
+      >
+        敘述內容敘述內容敘述內容敘述內容敘述內容敘述內容
+      </ListBubbleShape>
     </div>
   ));

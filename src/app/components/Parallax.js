@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import { subscribe } from 'subscribe-ui-event';
+import { addEventListener } from 'consolidated-events';
 import * as Rematrix from 'rematrix';
 import entries from 'lodash/entries';
 
@@ -27,12 +27,12 @@ class Parallax extends PureComponent {
 
   componentDidMount() {
     this.setMatixTarget();
+    this.unsubscribe = addEventListener(document, 'scroll', this.handleOnScroll());
     this.handleOnScroll(true)();
-    this.subscription = subscribe('scroll', this.handleOnScroll);
   }
 
   componentWillUnmount() {
-    this.subscription.unsubscribe();
+    this.unsubscribe();
   }
 
   setTransform = (matirx) => {
@@ -59,7 +59,6 @@ class Parallax extends PureComponent {
   handleOnScroll = (intial) => () => {
     this.elemDimension = this.element.getBoundingClientRect();
     this.curPosition = this.elemDimension.top;
-    console.log(this.curPosition);
     if (intial && (this.curPosition + window.scrollY) <= window.innerHeight) this.offsetStart = this.curPosition + window.scrollY;
     this.offset = Math.max(this.offsetStart - this.curPosition, 0);
 

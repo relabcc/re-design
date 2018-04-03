@@ -23,7 +23,7 @@ const ActivityCard = ({
   <Box pb="1em">
     <Border border={active && '2px solid white'} {...props} p="1em">
       <Box.relative is="section" bg="white" boxShadow={2} boxShadowBlur="4em">
-        <BackgroundImage src={image} ratio={630 / 1200} />
+        <BackgroundImage src={image} bg="lightGray" ratio={630 / 1200} />
         <Box px="2em" pt="2em" pb="3em" opacity={Number(active)}>
           <DateRange start={startDate} end={endDate} />
           <Text.h3>

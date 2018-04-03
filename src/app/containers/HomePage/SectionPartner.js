@@ -13,9 +13,11 @@ const About = (props) => (
   <Box px={['1em', '10%']} {...props}>
     <Flex flexWrap="wrap" justify="center">
       {partners.map(({ logo }, index) => (
-        <Circle key={index} w="6em" mx="1.5em" my="1em" bg="yellow" color="white">
-          {logo}
-        </Circle>
+        <Box key={index} w={[1 / 3, 1 / 4]} px="0.5em" my="1em">
+          <Circle maxWidth="6em" bg="yellow" color="white" mx="auto">
+            {logo}
+          </Circle>
+        </Box>
       ))}
     </Flex>
   </Box>

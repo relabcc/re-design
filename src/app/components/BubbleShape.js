@@ -8,6 +8,7 @@ import {
 } from 'styled-system';
 
 import Box from './Box';
+import FreeBackground from './FreeBackground';
 
 const parseOrigin = ({ apex }) => {
   switch (apex) {
@@ -51,7 +52,10 @@ const ForceAbsCenter = styled(Box.absolute)`
 `;
 
 const formatChildren = (children) => {
-  if (typeof children === 'string' || React.Children.count(children) > 1) return <div>{children}</div>;
+  if (typeof children === 'string'
+    || typeof children === 'number'
+    || React.Children.count(children) > 1
+  ) return <div>{children}</div>;
   return children;
 };
 
@@ -73,6 +77,12 @@ BubbleShape.border = (props) => (
   <BubbleShape
     border="0.5em solid"
     bg="transparent"
+    {...props}
+  />);
+
+BubbleShape.bg = (props) => (
+  <BubbleShape
+    is={FreeBackground}
     {...props}
   />);
 

@@ -6,7 +6,7 @@ import Border from '../components/Border';
 import Text from '../components/Text';
 import Button from '../components/Button';
 
-const FilterButton = (props) => (<Button.filter mx="0.5em" {...props} />);
+const FilterButton = (props) => (<Button.filter m="0.5em" {...props} />);
 
 const Filters = ({
   onToggle,
@@ -15,8 +15,8 @@ const Filters = ({
   ...props
 }) => (
   <Border border="1px solid" borderLeft="none" borderRight="none" py="4em">
-    <Flex px="3em" {...props}>
-      <Text>Filter Projects:</Text>
+    <Text pl={['1em', null, '3em']}>Filter Projects:</Text>
+    <Flex px={['1em', null, '3em']} flexWrap="wrap" {...props}>
       <FilterButton
         onClick={unsetAll}
         active={filters.every((filter) => !filter.active)}

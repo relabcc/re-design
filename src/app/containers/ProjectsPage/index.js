@@ -23,14 +23,16 @@ const filters = [
   { key: 'gov', label: '政府' },
 ];
 
-const render = (right) => (([l, r]) => {
+const renderBubble = (project, right, active) => (
+  <Box key={project.slug} p="2em">
+    <ProjectBubble right={right} active={active} {...project} />
+  </Box>
+);
+
+const renderHelper = (right) => (([l, r]) => {
   const project = right ? r : l;
   if (!project) return null;
-  return (
-    <Box key={project.slug} p="2em">
-      <ProjectBubble right={right} {...project} />
-    </Box>
-  );
+  return renderBubble(project, right);
 });
 
 const ProjectsPage = ({ dispatch, browser, filterOptions }) => {
@@ -45,14 +47,19 @@ const ProjectsPage = ({ dispatch, browser, filterOptions }) => {
             onToggle={(key) => () => dispatch(toggleFilter(key))}
             unsetAll={() => dispatch(toggleAll())}
           />
-          <Flex>
-            <Box w={1 / 2}>
-              {chunks.map(render())}
-            </Box>
-            <Box w={1 / 2} pt="10vh">
-              {chunks.map(render(true))}
-            </Box>
-          </Flex>
+          {browser.greaterThan.sm ? (
+            <Flex>
+              <Box w={1 / 2}>
+                {chunks.map(renderHelper())}
+              </Box>
+              <Box w={1 / 2} pt="10vh">
+                {chunks.map(renderHelper(true))}
+              </Box>
+            </Flex>
+          ) : (
+            projects.map((p, index) => renderBubble(p, index % 2, true))
+          )}
+
         </Container>
       </Patterns.gray>
       {browser.greaterThan.xs && <SideSocials />}

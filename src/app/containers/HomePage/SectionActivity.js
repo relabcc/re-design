@@ -5,7 +5,7 @@ import Box from '../../components/Box';
 import ActivityCarousel from '../../components/ActivityCarousel';
 
 const activities = Array(3).fill({
-  image: '//via.placeholder.com/1200x630',
+  image: '//loremflickr.com/1200/630',
   title: '活動主題名稱',
   description: '活動內容敘述活動內容敘述，活動內容敘述，活動內容敘述活動內容敘述，活動內容敘述，活動內容敘述活動內容敘述。',
   startDate: '2018-10-22',

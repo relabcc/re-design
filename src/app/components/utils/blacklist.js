@@ -17,6 +17,7 @@ export default [
   'scale',
   'hoverColor',
   'hoverBg',
+  'hoverBorder',
   'boxShadowBlur',
   'trans',
   'apex',

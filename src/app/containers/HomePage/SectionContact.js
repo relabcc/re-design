@@ -19,7 +19,7 @@ const fileds = [
 ];
 
 const Contact = (props) => (
-  <Box px={['1em', '10%']} pt={[0, '10%']} {...props}>
+  <Box px={['1em', '10%']} pt={[0, '10%']} pb={['20vh', 0]} {...props}>
     <form>
       {fileds.map(({ key, label, ...rest }) => (
         <Flex key={key} color="white" my="1em">

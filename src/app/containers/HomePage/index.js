@@ -10,7 +10,9 @@ import SectionPartner from './SectionPartner';
 import SectionContact from './SectionContact';
 import SideSocials from '../../components/SideSocials';
 import Patterns from '../../components/Patterns';
+
 import SectionLayout from './SectionLayout';
+import HomeButtons from './HomeButtons';
 
 import { setSectionIn, setSectionOut } from './reducer';
 import { makeSelectSocialColor } from './selectors';
@@ -90,6 +92,7 @@ const HomePage = ({ dispatch, browser, socialColor }) => (
       {firstSections.map(generateSection(dispatch))}
     </Patterns.gray>
     {restSections.map(generateSection(dispatch))}
+    <HomeButtons />
     {browser.greaterThan.xs && <SideSocials white={socialColor === 'white'} />}
   </div>
 );

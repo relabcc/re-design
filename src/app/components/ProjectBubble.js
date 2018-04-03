@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { themeGet } from 'styled-system';
 
-import FreeBackground from './FreeBackground';
 import BubbleShape from './BubbleShape';
 import Text from './Text';
 import Box from './Box';
@@ -16,6 +15,7 @@ const BubbleHover = styled(BubbleShape)`
   &:hover {
     opacity: 1;
   }
+  ${({ active }) => active && 'opacity: 1;'}
 `;
 
 const UnderlineTitle = styled(Text.h3)`
@@ -36,21 +36,39 @@ const ProjectBubble = ({
   preview,
   short,
   slug,
+  tags,
+  addedAt,
+  active,
+  iamges,
+  long,
+  participants,
   ...props
 }) => {
   const apex = right ? 3 : 2;
   return (
     <Box {...props}>
-      <BubbleShape apex={apex} is={FreeBackground} src={preview} p="2em" boxShadow={2}>
-        <BubbleHover apex={apex} bg="fade.yellow.70" p="4em" w="100%" height="100%">
-          <Link href={`/projects/${slug}`}>
+      <BubbleShape.bg
+        apex={apex}
+        src={preview}
+        p={['1em', null, null, '2em']}
+        boxShadow={2}
+      >
+        <BubbleHover
+          apex={apex}
+          bg="fade.yellow.70"
+          p={['1em', '2em', null, '4em']}
+          w="100%"
+          height="100%"
+          active={active}
+        >
+          <Link style={{ width: '100%' }} href={`/projects/${slug}`}>
             <Box w={1} color="white" pt="10%" pl={!right && '10%'} pr={right && '10%'}>
               <UnderlineTitle>{title}</UnderlineTitle>
               <Text fontWeight="bold">{short}</Text>
             </Box>
           </Link>
         </BubbleHover>
-      </BubbleShape>
+      </BubbleShape.bg>
     </Box>
   );
 };

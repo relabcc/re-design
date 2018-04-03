@@ -15,7 +15,7 @@ const About = (props) => (
   <Box px={['1em', '15%']} {...props}>
     <Flex mt="5vh" mb="2em" justify="space-between">
       {features.map(({ icon, label }, index) => (
-        <Box key={index} w="7em" align="center">
+        <Box key={index} px="0.5em" w={1 / 3} maxWidth="7em" align="center">
           <Circle bg="teal">{icon}</Circle>
           <Text my="1em" color="teal" f="1.25em" fontWeight="bold">{label}</Text>
         </Box>
