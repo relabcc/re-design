@@ -23,7 +23,7 @@ const Highlights = ({ list, ...props }) => (
     {list.map(({ content }, index) => (
       <Flex key={index} my="3em">
         <Box w="4em">
-          <BubbleShape bg="yellow" color="white" apex={0} f="2em" fontWeight="bold">
+          <BubbleShape bg="yellow" color="white" f="2em" fontWeight="bold">
             {index + 1}
           </BubbleShape>
         </Box>

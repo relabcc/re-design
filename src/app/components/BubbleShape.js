@@ -83,6 +83,7 @@ BubbleShape.border = (props) => (
 BubbleShape.bg = (props) => (
   <BubbleShape
     is={FreeBackground}
+    bg="lightGray"
     {...props}
   />);
 
