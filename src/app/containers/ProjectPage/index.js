@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import find from 'lodash/find';
 
 import App from '../App';
@@ -16,35 +17,41 @@ import SideSocials from '../../components/SideSocials';
 
 import projects from '../../data/projects';
 
-const ProjectsPage = ({ url: { query: { id } } }) => {
+const ProjectsPage = ({ url: { query: { id } }, browser }) => {
   const project = find(projects, 'slug', id);
   return (
     <Flex minHeight="100vh">
-      <Box w={2 / 3}>
+      <Box flex={1} height="200vh">
         {id}
       </Box>
-      <Box w={1 / 3} bg="#f1f1f1" px="5%" pt="2em">
-        <Box w="10em" mb="4em">
-          <Link href="/">
-            <Logo.horizontal />
-          </Link>
-        </Box>
-        <DateString>{project.addedAt}</DateString>
-        <Text.h3>{project.title}</Text.h3>
-        <Border w="4em" borderBottom="1px solid" my="2em" />
-        <Text f="0.8em">{project.short}</Text>
-        <Box pt="2em" pb="6em">
-          <HeartButton mx="auto" />
-        </Box>
-        <Box>
-          {project.tags.map((tag) => (
-            <BubbleTag key={tag.key} mx="0.5em">{tag.label}</BubbleTag>
-          ))}
-        </Box>
-        <SideSocials.horizontal pt="3em" mx="auto" />
-      </Box>
+      <Box.relative w="26em" bg="#f1f1f1">
+        <Box.fixed px="4em" pt="2em">
+          <Box w="12em" mb="4em">
+            <Link href="/">
+              <Logo.horizontal />
+            </Link>
+          </Box>
+          <Box w={1}>
+            <DateString>{project.addedAt}</DateString>
+            <Text.h3>{project.title}</Text.h3>
+            <Border w="4em" border="1px solid" borderColor="lightGray" my="2em" />
+            <Text f="0.8em">{project.short}{project.short}{project.short}</Text>
+            <Box pt="2em" pb="6em">
+              <HeartButton mx="auto" />
+            </Box>
+            <Box>
+              {project.tags.map((tag) => (
+                <BubbleTag key={tag.key} m="0.5em">{tag.label}</BubbleTag>
+              ))}
+            </Box>
+            <SideSocials.horizontal pt="3em" mx="auto" />
+          </Box>
+        </Box.fixed>
+      </Box.relative>
     </Flex>
   );
 };
 
-export default (props) => <App noHeader><ProjectsPage {...props} /></App>;
+const Connected = connect((state) => ({ browser: state.get('browser') }))(ProjectsPage);
+
+export default (props) => <App noHeader><Connected {...props} /></App>;
